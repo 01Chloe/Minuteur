@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="description" content="Minuteur">
+
+     <title>Minuteur</title>
+
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="minuteur">
+<h1>Minuteur</h1>
+
+     <input type="number" min="0" max="23" id="heures" placeholder="heures">
+     <input type="number" min="0" max="60" id="minutes" placeholder="minutes">
+     <input type="number" min="0" max="60" id="secondes" placeholder="secondes">
+     <br>
+     <button class="lancer">Lancer</button>
+     
+     <p class="reste"> Temps restant </p>
+     <button class="actualiser">Actualiser</button>
+</div>
+
+<p id="horloge"></p>
+
+
+<script src="script.js"></script>     
+</body>
+</html>
