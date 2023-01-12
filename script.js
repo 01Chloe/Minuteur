@@ -7,6 +7,7 @@ const tempsRestant = document.querySelector('.reste');
 let seconde;
 let minute;
 let heure;
+let audio = new Audio('song.mp3');
 
 
 //ecouter les secondes
@@ -29,6 +30,7 @@ heures.addEventListener('input', (e) => {
 let lock = false;
 btnLancer.addEventListener('click', handleTime);
 function handleTime() {
+     // stopSong();
      lock = true;
      
      tempsRestant.innerHTML = heure + "h " + minute + "min " + seconde + "s";
@@ -40,6 +42,7 @@ function handleTime() {
      if (heure === 0 && minute === 0 && seconde === 0){
           clearInterval(interval);
           tempsRestant.innerHTML = "Temps écoulé";
+          playSong()
      };
      
      //clearInterval
@@ -54,7 +57,6 @@ function handleTime() {
           btnLancer.removeEventListener('click', handleTime)
      }
 }
-
 
 function goTime() {
      if(seconde <= 60 && seconde >= 1) {
@@ -71,11 +73,19 @@ function goTime() {
           minute = 59;
      } else if (heure === 0 && minute === 0 && seconde === 0){
           tempsRestant.innerHTML = "Temps écoulé";
+          playSong();
      } else {
           tempsRestant.innerHTML = "Temps écoulé";
+          playSong();
      }
 };
 
+function playSong() {
+     audio.play();
+     setTimeout(() => {
+          audio.pause()
+     }, 1000)
+}
 
 
 //pour afficher la date en temps réel
